@@ -30,6 +30,7 @@ function wrapRegisterApp(nativeFunc) {
         ...args,
         (error, result) => {
           if (!error) {
+            isAppRegistered = true;
             return resolve(result);
           }
           if (typeof error === 'string') {
